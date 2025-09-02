@@ -4,7 +4,13 @@
     box-sizing: border-box;
 }
 
-p, h1, h2, h3, h4, h5, h6{
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Ubuntu", sans-serif;
 }
 
@@ -47,30 +53,30 @@ p, h1, h2, h3, h4, h5, h6{
     padding: 0 20px;
 }
 
-.sobre{
+.sobre {
     background-color: rgb(199, 197, 197);
     display: flex;
     padding: 20px;
 }
 
-.sobre .texto{
+.sobre .texto {
     margin-top: 70px;
     flex: 1;
 }
 
-.sobre h3{
+.sobre h3 {
     margin-top: 70px;
     margin-left: 50px;
 }
 
-.sobre p{
+.sobre p {
     padding-top: 30px;
     margin-left: 50px;
     max-width: 700px;
     text-align: justify;
 }
 
-.sobre img{
+.sobre img {
     margin-top: 50px;
     padding-left: 50px;
     height: auto;
@@ -80,7 +86,7 @@ p, h1, h2, h3, h4, h5, h6{
     flex-shrink: 0;
 }
 
-.importancia{
+.importancia {
     padding: 70px 20px 20px 20px;
     background-color: rgb(199, 197, 197);
     display: flex;
@@ -88,19 +94,19 @@ p, h1, h2, h3, h4, h5, h6{
     text-align: end;
 }
 
-.importancia h3{
+.importancia h3 {
     padding-top: 70px;
     margin-right: 50px;
 }
 
-.importancia p{
+.importancia p {
     text-align: justify;
     margin-right: 50px;
     padding-top: 30px;
     max-width: 700px;
 }
 
-.importancia img{
+.importancia img {
     padding-right: 50px;
     height: auto;
     max-height: 390px;
@@ -109,28 +115,52 @@ p, h1, h2, h3, h4, h5, h6{
     flex-shrink: 0;
 }
 
-.paises{
+.paises {
     background-color: rgb(199, 197, 197);
     text-align: center;
     align-items: center;
-    h2{
-      padding-top: 40px;
-      padding-bottom: 30px;
+
+    h2 {
+        padding-top: 40px;
+        padding-bottom: 30px;
     }
-    img{
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
-      height: 150px;
-      width: 250px;
+
+    img {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 150px;
+        width: 250px;
     }
-    .pais{
-      text-align: center;
+
+    .pais {
+        text-align: center;
     }
-    .links{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-  }
+}
+.texto-1{
+    margin-top: 15px;
+}
+
+.saiba {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: #c7c5c5;
+    img {
+        width: 700px;
+        height: 390px;
+        border-radius: 20px;
+}
+ h3 {
+        padding-bottom: 20px;
+    }
+}
