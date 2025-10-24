@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/paises.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../assets/onu-icon.png" type="image/png">
+    <title>INGLATERRA</title>
+</head>
+
+<body>
+    <header>
+        <div class="home-hiperlink">
+            <a href="../index.html#links">
+                <div class="back"></div>
+                <p>Voltar à página inicial</p>
+            </a>
+        </div>
+    </header>
+
+    <div class="paisContainer">
+        <div class="bannerContainer">
+            <div class="full-screen"></div>
+            <img src="assets/inglaterra.jpg" alt="Bandeira do país">
+            <h1 class="paisTitulo">INGLATERRA</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="conteudoContainer">
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">SOBRE O PAÍS</h2>
+                <div class="cards-container" id="sobrePaisContainer">
+                    <button class="nav-btn prev-btn" id="sobrePaisPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="sobrePaisNext">&#10095;</button>
+                    <div class="cards-wrapper" id="sobrePaisWrapper"></div>
+                    <div class="card-indicators" id="sobrePaisIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">DISCURSO</h2>
+                <div class="cards-container" id="discursoContainer">
+                    <button class="nav-btn prev-btn" id="discursoPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="discursoNext">&#10095;</button>
+                    <div class="cards-wrapper" id="discursoWrapper"></div>
+                    <div class="card-indicators" id="discursoIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">COMIDA TÍPICA</h2>
+                <div class="cards-container" id="comidaContainer">
+                    <button class="nav-btn prev-btn" id="comidaPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="comidaNext">&#10095;</button>
+                    <div class="cards-wrapper" id="comidaWrapper"></div>
+                    <div class="card-indicators" id="comidaIndicators"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stars" id="stars"></div>
+    <script src="../scripts/stars.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sobrePaisData = [
+                {
+                    title: "Estrutura Política",
+                    content: "O Reino Unido (UK) é uma nação insular composta por quatro países: Inglaterra, Escócia, País de Gales e Irlanda do Norte. Com Londres como capital, o país é conhecido por sua rica herança histórica, instituições democráticas consolidadas e influência global em áreas como finanças, cultura e diplomacia."
+                },
+                {
+                    title: "Posição Internacional",
+                    content: "Membro permanente do Conselho de Segurança da ONU e da OTAN, o Reino Unido desempenha um papel significativo em assuntos internacionais, buscando equilibrar suas tradições com os desafios contemporâneos."
+                },
+                {
+                    title: "Economia em 2025",
+                    content: "Em 2025, a economia britânica enfrenta desafios significativos, incluindo tensões comerciais com os Estados Unidos e uma desaceleração no crescimento. O Fundo Monetário Internacional (FMI) reduziu a previsão de crescimento do PIB do Reino Unido de 1,6% para 1,1%."
+                },
+                {
+                    title: "Investimentos Estratégicos",
+                    content: "Apesar dos desafios, o Reino Unido continua a investir em setores estratégicos. O primeiro-ministro Keir Starmer anunciou um investimento de £300 milhões na indústria de energia eólica offshore, destacando a energia renovável como chave para a segurança energética."
+                },
+                {
+                    title: "Liderança Política",
+                    content: "Sir Keir Starmer é o primeiro-ministro do Reino Unido desde julho de 2024, após liderar o Partido Trabalhista a uma vitória nas eleições gerais, encerrando 14 anos de governo conservador."
+                }
+            ];
+
+            const comidaData = [
+                {
+                    title: "Descrição",
+                    content: "O chá inglês, ou afternoon tea, é uma tradição britânica refinada que consiste em uma refeição leve servida entre o almoço e o jantar. Acompanhado por chá preto com leite ou limão, é servido com petiscos delicados como sanduíches finos, scones com creme e geleia, além de bolos e doces.",
+                    type: "text"
+                },
+                {
+                    title: "Ingredientes",
+                    content: "",
+                    type: "list",
+                    items: [
+                        "Chá preto (Earl Grey, English Breakfast, Darjeeling)",
+                        "Leite ou limão",
+                        "Scones",
+                        "Clotted cream (creme espesso)",
+                        "Geleia de morango",
+                        "Sanduíches finos (pepino, ovo com maionese, salmão defumado)",
+                        "Doces e bolos (como Victoria sponge cake, éclairs)"
+                    ]
+                },
+                {
+                    title: "Observação",
+                    content: "A tradição começou no século XIX com Anna, a Duquesa de Bedford, e rapidamente virou um evento social da elite britânica. Servido com porcelanas finas e muita elegância, o chá inglês permanece até hoje como símbolo da cultura e etiqueta britânicas — sendo até hábito diário da Rainha Elizabeth II.",
+                    type: "text"
+                },
+                {
+                    title: "Imagem",
+                    content: "",
+                    type: "image",
+                    src: "assets/comidas/cha.jpg"
+                }
+            ];
+
+            const discursoData = [
+                {
+                    title: "Arquivo PDF",
+                    content: "",
+                    type: "pdf",
+                    src: "Discursos/Discurso da Inglaterra.pdf"
+                }
+            ];
+
+            initGallery("sobrePais", sobrePaisData);
+            initGallery("comida", comidaData);
+            initGallery("discurso", discursoData);
+
+            function initGallery(galleryId, data) {
+                const wrapper = document.getElementById(`${galleryId}Wrapper`);
+                const indicators = document.getElementById(`${galleryId}Indicators`);
+                const prevBtn = document.getElementById(`${galleryId}Prev`);
+                const nextBtn = document.getElementById(`${galleryId}Next`);
+                let currentIndex = 0;
+
+                data.forEach((item, index) => {
+                    const cardElement = document.createElement('div');
+                    cardElement.className = `card ${galleryId === 'comida' ? 'card-comida' : ''} ${galleryId === 'discurso' ? 'card-discurso' : ''}`;
+                    
+                    let cardContent = `<h3>${item.title}</h3>`;
+                    
+                    if (item.type === "list") {
+                        cardContent += `<ul>`;
+                        item.items.forEach(listItem => cardContent += `<li>${listItem}</li>`);
+                        cardContent += `</ul>`;
+                    } else if (item.type === "image") {
+                        cardContent += `<img src="${item.src}" alt="${item.title}">`;
+                    } else if (item.type === "pdf") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<a href="${item.src}" download class="botao-download"><img class="icon" src="assets/icones/pdf.png" alt="Download do pdf"></a>`;
+                    } else if (item.type === "video") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<iframe src="${item.src}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    } else {
+                        cardContent += `<p>${item.content}</p>`;
+                    }
+                    
+                    cardElement.innerHTML = cardContent;
+                    wrapper.appendChild(cardElement);
+
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    if (index === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToCard(galleryId, index));
+                    indicators.appendChild(indicator);
+                });
+
+                function updateActiveCard() {
+                    const cards = wrapper.querySelectorAll('.card');
+                    const indicatorsList = indicators.querySelectorAll('.indicator');
+                    
+                    cards.forEach((card, index) => {
+                        card.classList.toggle('active', index === currentIndex);
+                    });
+                    
+                    indicatorsList.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === currentIndex);
+                    });
+                    
+                    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                function goToCard(galleryId, index) {
+                    currentIndex = index;
+                    updateActiveCard();
+                }
+
+                function nextCard() {
+                    currentIndex = (currentIndex + 1) % data.length;
+                    updateActiveCard();
+                }
+
+                function prevCard() {
+                    currentIndex = (currentIndex - 1 + data.length) % data.length;
+                    updateActiveCard();
+                }
+
+                nextBtn.addEventListener('click', nextCard);
+                prevBtn.addEventListener('click', prevCard);
+
+                document.addEventListener('keydown', (e) => {
+                    const activeContainer = document.activeElement.closest('.cards-container');
+                    if (activeContainer && activeContainer.id === `${galleryId}Container`) {
+                        if (e.key === 'ArrowRight') nextCard();
+                        if (e.key === 'ArrowLeft') prevCard();
+                    }
+                });
+
+                let autoPlayInterval = setInterval(nextCard, 5000);
+                wrapper.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                wrapper.addEventListener('mouseleave', () => autoPlayInterval = setInterval(nextCard, 5000));
+
+                updateActiveCard();
+            }
+        });
+    </script>
+</body>
+
+</html>

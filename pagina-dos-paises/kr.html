@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/paises.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../assets/onu-icon.png" type="image/png">
+    <title>COREIA DO SUL</title>
+</head>
+
+<body>
+    <header>
+        <div class="home-hiperlink">
+            <a href="../index.html#links">
+                <div class="back"></div>
+                <p>Voltar à página inicial</p>
+            </a>
+        </div>
+    </header>
+
+    <div class="paisContainer">
+        <div class="bannerContainer">
+            <div class="full-screen"></div>
+            <img src="assets/coreiadosul.svg" alt="Bandeira do país">
+            <h1 class="paisTitulo">COREIA DO SUL</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="conteudoContainer">
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">SOBRE O PAÍS</h2>
+                <div class="cards-container" id="sobrePaisContainer">
+                    <button class="nav-btn prev-btn" id="sobrePaisPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="sobrePaisNext">&#10095;</button>
+                    <div class="cards-wrapper" id="sobrePaisWrapper"></div>
+                    <div class="card-indicators" id="sobrePaisIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">DISCURSO</h2>
+                <div class="cards-container" id="discursoContainer">
+                    <button class="nav-btn prev-btn" id="discursoPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="discursoNext">&#10095;</button>
+                    <div class="cards-wrapper" id="discursoWrapper"></div>
+                    <div class="card-indicators" id="discursoIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">ENTREVISTA</h2>
+                <div style="text-align: center;">
+                    <!-- Espaço para vídeo da entrevista quando disponível -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stars" id="stars"></div>
+    <script src="../scripts/stars.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sobrePaisData = [
+                {
+                    title: "Economia e Tecnologia",
+                    content: "A Coreia do Sul é uma das economias mais desenvolvidas da Ásia, conhecida por sua forte indústria de tecnologia, automotiva e de entretenimento. O país é lar de conglomerados globais como Samsung, Hyundai e LG."
+                },
+                {
+                    title: "Desenvolvimento",
+                    content: "Com um IDH de aproximadamente 0,916, a Coreia do Sul ocupa uma posição destacada em educação, saúde e qualidade de vida. O país investe fortemente em pesquisa e desenvolvimento."
+                },
+                {
+                    title: "Cultura Global",
+                    content: "A cultura coreana ganhou projeção mundial através do K-pop, dramas coreanos e cinema. A onda Hallyu transformou o país em um exportador cultural de grande influência global."
+                },
+                {
+                    title: "Sistema Político",
+                    content: "Politicamente, a Coreia do Sul é uma república presidencialista democrática. O país mantém relações complexas com a Coreia do Norte e desempenha papel estratégico na geopolítica asiática."
+                },
+                {
+                    title: "Inovação e Educação",
+                    content: "O país é reconhecido por seu sistema educacional rigoroso e por ser um dos mais conectados digitalmente do mundo, com infraestrutura de internet de alta velocidade disponível em todo o território."
+                }
+            ];
+
+            const discursoData = [
+                {
+                    title: "Arquivo PDF",
+                    content: "",
+                    type: "pdf",
+                    src: "Discursos/Discurso da Coreia do Sul.pdf"
+                }
+            ];
+
+            initGallery("sobrePais", sobrePaisData);
+            initGallery("discurso", discursoData);
+
+            function initGallery(galleryId, data) {
+                const wrapper = document.getElementById(`${galleryId}Wrapper`);
+                const indicators = document.getElementById(`${galleryId}Indicators`);
+                const prevBtn = document.getElementById(`${galleryId}Prev`);
+                const nextBtn = document.getElementById(`${galleryId}Next`);
+                let currentIndex = 0;
+
+                data.forEach((item, index) => {
+                    const cardElement = document.createElement('div');
+                    cardElement.className = `card ${galleryId === 'comida' ? 'card-comida' : ''} ${galleryId === 'discurso' ? 'card-discurso' : ''}`;
+                    
+                    let cardContent = `<h3>${item.title}</h3>`;
+                    
+                    if (item.type === "list") {
+                        cardContent += `<ul>`;
+                        item.items.forEach(listItem => cardContent += `<li>${listItem}</li>`);
+                        cardContent += `</ul>`;
+                    } else if (item.type === "image") {
+                        cardContent += `<img src="${item.src}" alt="${item.title}">`;
+                    } else if (item.type === "pdf") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<a href="${item.src}" download class="botao-download"><img class="icon" src="assets/icones/pdf.png" alt="Download do pdf"></a>`;
+                    } else if (item.type === "video") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<iframe src="${item.src}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    } else {
+                        cardContent += `<p>${item.content}</p>`;
+                    }
+                    
+                    cardElement.innerHTML = cardContent;
+                    wrapper.appendChild(cardElement);
+
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    if (index === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToCard(galleryId, index));
+                    indicators.appendChild(indicator);
+                });
+
+                function updateActiveCard() {
+                    const cards = wrapper.querySelectorAll('.card');
+                    const indicatorsList = indicators.querySelectorAll('.indicator');
+                    
+                    cards.forEach((card, index) => {
+                        card.classList.toggle('active', index === currentIndex);
+                    });
+                    
+                    indicatorsList.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === currentIndex);
+                    });
+                    
+                    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                function goToCard(galleryId, index) {
+                    currentIndex = index;
+                    updateActiveCard();
+                }
+
+                function nextCard() {
+                    currentIndex = (currentIndex + 1) % data.length;
+                    updateActiveCard();
+                }
+
+                function prevCard() {
+                    currentIndex = (currentIndex - 1 + data.length) % data.length;
+                    updateActiveCard();
+                }
+
+                nextBtn.addEventListener('click', nextCard);
+                prevBtn.addEventListener('click', prevCard);
+
+                document.addEventListener('keydown', (e) => {
+                    const activeContainer = document.activeElement.closest('.cards-container');
+                    if (activeContainer && activeContainer.id === `${galleryId}Container`) {
+                        if (e.key === 'ArrowRight') nextCard();
+                        if (e.key === 'ArrowLeft') prevCard();
+                    }
+                });
+
+                let autoPlayInterval = setInterval(nextCard, 5000);
+                wrapper.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                wrapper.addEventListener('mouseleave', () => autoPlayInterval = setInterval(nextCard, 5000));
+
+                updateActiveCard();
+            }
+        });
+    </script>
+</body>
+
+</html>

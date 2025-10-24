@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/paises.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../assets/onu-icon.png" type="image/png">
+    <title>ARGENTINA</title>
+</head>
+
+<body>
+    <header>
+        <div class="home-hiperlink">
+            <a href="../index.html#links">
+                <div class="back"></div>
+                <p>Voltar à página inicial</p>
+            </a>
+        </div>
+    </header>
+
+    <div class="paisContainer">
+        <div class="bannerContainer">
+            <div class="full-screen"></div>
+            <img src="assets/argentina.jpg" alt="Bandeira do país">
+            <h1 class="paisTitulo">ARGENTINA</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="conteudoContainer">
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">SOBRE O PAÍS</h2>
+                <div class="cards-container" id="sobrePaisContainer">
+                    <button class="nav-btn prev-btn" id="sobrePaisPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="sobrePaisNext">&#10095;</button>
+                    <div class="cards-wrapper" id="sobrePaisWrapper"></div>
+                    <div class="card-indicators" id="sobrePaisIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">DISCURSO</h2>
+                <div class="cards-container" id="discursoContainer">
+                    <button class="nav-btn prev-btn" id="discursoPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="discursoNext">&#10095;</button>
+                    <div class="cards-wrapper" id="discursoWrapper"></div>
+                    <div class="card-indicators" id="discursoIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">COMIDA TÍPICA</h2>
+                <div class="cards-container" id="comidaContainer">
+                    <button class="nav-btn prev-btn" id="comidaPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="comidaNext">&#10095;</button>
+                    <div class="cards-wrapper" id="comidaWrapper"></div>
+                    <div class="card-indicators" id="comidaIndicators"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stars" id="stars"></div>
+    <script src="../scripts/stars.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sobrePaisData = [
+                {
+                    title: "Liderança Política",
+                    content: "O atual presidente da Argentina é Javier Milei, que assumiu o cargo em dezembro de 2023. Ele é líder do partido de direita La Libertad Avanza e implementou uma agenda de reformas econômicas focada em austeridade fiscal, redução de impostos e privatizações."
+                },
+                {
+                    title: "Recuperação Econômica",
+                    content: "Em 2025, a economia argentina apresenta sinais de recuperação após dois anos consecutivos de recessão. O Produto Interno Bruto (PIB) cresceu 5,7% no primeiro trimestre, impulsionado pelo consumo e pela recuperação de setores como comércio, pesca e serviços financeiros."
+                },
+                {
+                    title: "Flexibilização Cambial",
+                    content: "O governo de Milei implementou uma flexibilização parcial do controle cambial, permitindo uma maior flutuação do peso argentino. Essa medida gerou volatilidade nos mercados financeiros, mas também trouxe alívio ao permitir maior acesso a dólares."
+                },
+                {
+                    title: "Desafios Sociais",
+                    content: "Apesar dos avanços econômicos, desafios persistem. A pobreza ainda afeta 38,1% da população, e setores como saúde e educação enfrentam dificuldades devido a cortes orçamentários."
+                },
+                {
+                    title: "Relações Internacionais",
+                    content: "Internacionalmente, a Argentina busca fortalecer relações com os Estados Unidos e outros parceiros comerciais. O presidente Milei participou do Fórum Econômico Mundial em Davos, onde destacou a importância de reformas estruturais e abertura econômica."
+                }
+            ];
+
+            const comidaData = [
+                {
+                    title: "Descrição",
+                    content: "A empanada é um dos pratos mais tradicionais da Argentina. Consiste em uma massa recheada com carne, frango, queijo, legumes ou até versões doces. Pode ser assada ou frita, dependendo da região.",
+                    type: "text"
+                },
+                {
+                    title: "Ingredientes",
+                    content: "",
+                    type: "list",
+                    items: [
+                        "Massa (farinha de trigo, gordura, água e sal)",
+                        "Carne moída ou picada (bovina)",
+                        "Cebola",
+                        "Ovos cozidos",
+                        "Azeitonas",
+                        "Pimentão",
+                        "Especiarias (páprica, cominho, pimenta)"
+                    ]
+                },
+                {
+                    title: "Observação",
+                    content: "A empanada clássica argentina tem formato de meia-lua e é fechada com uma borda trançada chamada 'repulgue', que ajuda a identificar o recheio. Cada região do país tem sua própria versão — as de Salta e Tucumán estão entre as mais famosas.",
+                    type: "text"
+                },
+                {
+                    title: "Imagem",
+                    content: "",
+                    type: "image",
+                    src: "assets/comidas/empanadas.jpg"
+                }
+            ];
+
+            const discursoData = [
+                {
+                    title: "Arquivo PDF",
+                    content: "",
+                    type: "pdf",
+                    src: "Discursos/Discurso da Argentina.pdf"
+                }
+            ];
+
+            initGallery("sobrePais", sobrePaisData);
+            initGallery("comida", comidaData);
+            initGallery("discurso", discursoData);
+
+            function initGallery(galleryId, data) {
+                const wrapper = document.getElementById(`${galleryId}Wrapper`);
+                const indicators = document.getElementById(`${galleryId}Indicators`);
+                const prevBtn = document.getElementById(`${galleryId}Prev`);
+                const nextBtn = document.getElementById(`${galleryId}Next`);
+                let currentIndex = 0;
+
+                data.forEach((item, index) => {
+                    const cardElement = document.createElement('div');
+                    cardElement.className = `card ${galleryId === 'comida' ? 'card-comida' : ''} ${galleryId === 'discurso' ? 'card-discurso' : ''}`;
+
+                    let cardContent = `<h3>${item.title}</h3>`;
+
+                    if (item.type === "list") {
+                        cardContent += `<ul>`;
+                        item.items.forEach(listItem => cardContent += `<li>${listItem}</li>`);
+                        cardContent += `</ul>`;
+                    } else if (item.type === "image") {
+                        cardContent += `<img src="${item.src}" alt="${item.title}">`;
+                    } else if (item.type === "pdf") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<a href="${item.src}" download class="botao-download"><img class="icon" src="assets/icones/pdf.png" alt="Download do pdf"></a>`;
+                    } else if (item.type === "video") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<iframe src="${item.src}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    } else {
+                        cardContent += `<p>${item.content}</p>`;
+                    }
+
+                    cardElement.innerHTML = cardContent;
+                    wrapper.appendChild(cardElement);
+
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    if (index === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToCard(galleryId, index));
+                    indicators.appendChild(indicator);
+                });
+
+                function updateActiveCard() {
+                    const cards = wrapper.querySelectorAll('.card');
+                    const indicatorsList = indicators.querySelectorAll('.indicator');
+
+                    cards.forEach((card, index) => {
+                        card.classList.toggle('active', index === currentIndex);
+                    });
+
+                    indicatorsList.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === currentIndex);
+                    });
+
+                    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                function goToCard(galleryId, index) {
+                    currentIndex = index;
+                    updateActiveCard();
+                }
+
+                function nextCard() {
+                    currentIndex = (currentIndex + 1) % data.length;
+                    updateActiveCard();
+                }
+
+                function prevCard() {
+                    currentIndex = (currentIndex - 1 + data.length) % data.length;
+                    updateActiveCard();
+                }
+
+                nextBtn.addEventListener('click', nextCard);
+                prevBtn.addEventListener('click', prevCard);
+
+                document.addEventListener('keydown', (e) => {
+                    const activeContainer = document.activeElement.closest('.cards-container');
+                    if (activeContainer && activeContainer.id === `${galleryId}Container`) {
+                        if (e.key === 'ArrowRight') nextCard();
+                        if (e.key === 'ArrowLeft') prevCard();
+                    }
+                });
+
+                let autoPlayInterval = setInterval(nextCard, 5000);
+                wrapper.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                wrapper.addEventListener('mouseleave', () => autoPlayInterval = setInterval(nextCard, 5000));
+
+                updateActiveCard();
+            }
+        });
+    </script>
+</body>
+
+</html>
