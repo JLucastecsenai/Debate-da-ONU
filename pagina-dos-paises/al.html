@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/paises.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../assets/onu-icon.png" type="image/png">
+    <title>ALEMANHA</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="home-hiperlink">
+            <a href="../index.html#links">
+                <div class="back"></div>
+                <p>Voltar à página inicial</p>
+            </a>
+        </div>
+    </header>
+
+    <div class="paisContainer">
+        <div class="bannerContainer">
+            <div class="full-screen"></div>
+            <img src="assets/alemanha.jpg" alt="Bandeira do país">
+            <h1 class="paisTitulo">ALEMANHA</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="conteudoContainer">
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">SOBRE O PAÍS</h2>
+
+                <!-- Galeria de cards infinita - SOBRE O PAÍS -->
+                <div class="cards-container" id="sobrePaisContainer">
+                    <button class="nav-btn prev-btn" id="sobrePaisPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="sobrePaisNext">&#10095;</button>
+
+                    <div class="cards-wrapper" id="sobrePaisWrapper">
+                        <!-- Cards serão inseridos via JavaScript -->
+                    </div>
+
+                    <div class="card-indicators" id="sobrePaisIndicators">
+                        <!-- Indicadores serão inseridos via JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">DISCURSO</h2>
+
+                <!-- Galeria de cards infinita - DISCURSO -->
+                <div class="cards-container" id="discursoContainer">
+                    <button class="nav-btn prev-btn" id="discursoPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="discursoNext">&#10095;</button>
+
+                    <div class="cards-wrapper" id="discursoWrapper">
+                        <!-- Cards serão inseridos via JavaScript -->
+                    </div>
+
+                    <div class="card-indicators" id="discursoIndicators">
+                        <!-- Indicadores serão inseridos via JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">COMIDA TÍPICA</h2>
+
+                <!-- Galeria de cards infinita - COMIDA TÍPICA -->
+                <div class="cards-container" id="comidaContainer">
+                    <button class="nav-btn prev-btn" id="comidaPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="comidaNext">&#10095;</button>
+
+                    <div class="cards-wrapper" id="comidaWrapper">
+                        <!-- Cards serão inseridos via JavaScript -->
+                    </div>
+
+                    <div class="card-indicators" id="comidaIndicators">
+                        <!-- Indicadores serão inseridos via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stars" id="stars"></div>
+
+    <!-- Script das Estrelas Piscando-->
+    <script src="../scripts/stars.js"></script>
+
+    <!-- Script Padrão da Página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Galeria de cards - SOBRE O PAÍS
+            const sobrePaisData = [
+                {
+                    title: "Localização e Influência",
+                    content: "A Alemanha é um dos países mais influentes da Europa, localizada no coração do continente. Com uma rica história cultural, cidades modernas e uma forte presença global, o país é conhecido por sua excelência em engenharia, inovação e qualidade de vida."
+                },
+                {
+                    title: "Liderança Política",
+                    content: "Atualmente, o presidente da Alemanha é Frank-Walter Steinmeier, que ocupa o cargo desde 2017. Embora o papel de presidente seja mais representativo, ele desempenha um papel importante na diplomacia e na estabilidade institucional do país."
+                },
+                {
+                    title: "Potência Econômica",
+                    content: "Na economia, a Alemanha se destaca como a maior potência econômica da Europa e a quarta maior do mundo em PIB nominal. Sua força vem de um setor industrial altamente desenvolvido, especialmente nas áreas de automobilismo, engenharia mecânica, química e tecnologia. Marcas como Volkswagen, BMW, Siemens e Bosch são reconhecidas mundialmente."
+                },
+                {
+                    title: "Exportações e Inovação",
+                    content: "Além disso, o país é um dos maiores exportadores do planeta, com uma balança comercial positiva e forte foco em inovação. A economia alemã é impulsionada por um modelo conhecido como 'economia social de mercado', que combina princípios de livre mercado com políticas de bem-estar social."
+                },
+                {
+                    title: "Infraestrutura e Desenvolvimento",
+                    content: "Com uma infraestrutura de ponta, mão de obra qualificada e estabilidade política, a Alemanha continua sendo um polo de investimentos e um exemplo de desenvolvimento sustentável na Europa."
+                }
+            ];
+
+            // Galeria de cards - COMIDA TÍPICA
+            const comidaData = [
+                {
+                    title: "Descrição",
+                    content: "O joelho de porco, conhecido na Alemanha como Eisbein, é um prato tradicional da culinária alemã, especialmente popular nas regiões da Baviera e Berlim. Conhecido pelo sabor intenso e textura suculenta, ele é geralmente servido com chucrute, batatas ou purê.",
+                    type: "text"
+                },
+                {
+                    title: "Ingredientes",
+                    content: "",
+                    type: "list",
+                    items: [
+                        "1 joelho de porco (aprox. 1 kg)",
+                        "Sal grosso",
+                        "Pimenta-do-reino",
+                        "Alho",
+                        "Cebola",
+                        "Louro",
+                        "Grãos de zimbro (opcional, mas tradicional)",
+                        "Cerveja (em algumas versões para marinar ou assar)",
+                        "Legumes para o cozimento (cenoura, alho-poró, salsão)"
+                    ]
+                },
+                {
+                    title: "Observação",
+                    content: "O joelho pode ser cozido ou assado — ou uma combinação dos dois, resultando em carne macia por dentro e crocante por fora. A versão assada é chamada de Schweinshaxe na Baviera.",
+                    type: "text"
+                },
+                {
+                    title: "Imagem",
+                    content: "",
+                    type: "image",
+                    src: "assets/comidas/joelho de porco.jpg"
+                }
+            ];
+
+            // Galeria de cards - DISCURSO
+            const discursoData = [
+                {
+                    title: "Arquivo PDF",
+                    content: "",
+                    type: "pdf",
+                    src: "Discursos/Discurso da Alemanha.pdf"
+                },
+                {
+                    title: "Vídeo da Entrevista",
+                    content: "",
+                    type: "video",
+                    src: "https://www.youtube.com/embed/hKjoLnjjp5E?si=wpiqlVteMMskTHY-" // URL de exemplo
+                }
+            ];
+
+            // Inicializar todas as galerias
+            initGallery("sobrePais", sobrePaisData);
+            initGallery("comida", comidaData);
+            initGallery("discurso", discursoData);
+
+            // Função para inicializar uma galeria
+            function initGallery(galleryId, data) {
+                const wrapper = document.getElementById(`${galleryId}Wrapper`);
+                const indicators = document.getElementById(`${galleryId}Indicators`);
+                const prevBtn = document.getElementById(`${galleryId}Prev`);
+                const nextBtn = document.getElementById(`${galleryId}Next`);
+
+                let currentIndex = 0;
+
+                // Criar cards e indicadores
+                data.forEach((item, index) => {
+                    // Criar card
+                    const cardElement = document.createElement('div');
+                    cardElement.className = `card ${galleryId === 'comida' ? 'card-comida' : ''} ${galleryId === 'discurso' ? 'card-discurso' : ''}`;
+
+                    let cardContent = `<h3>${item.title}</h3>`;
+
+                    if (item.type === "list") {
+                        cardContent += `<ul>`;
+                        item.items.forEach(listItem => {
+                            cardContent += `<li>${listItem}</li>`;
+                        });
+                        cardContent += `</ul>`;
+                    } else if (item.type === "image") {
+                        cardContent += `<img src="${item.src}" alt="${item.title}">`;
+                    } else if (item.type === "pdf") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<a href="${item.src}" download class="botao-download"><img class="icon" src="assets/icones/pdf.png" alt="Download do pdf"></a>`;
+                    } else if (item.type === "video") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<iframe src="${item.src}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    } else {
+                        cardContent += `<p>${item.content}</p>`;
+                    }
+
+                    cardElement.innerHTML = cardContent;
+                    wrapper.appendChild(cardElement);
+
+                    // Criar indicador
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    if (index === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToCard(galleryId, index));
+                    indicators.appendChild(indicator);
+                });
+
+                // Atualizar cards ativos
+                function updateActiveCard() {
+                    const cards = wrapper.querySelectorAll('.card');
+                    const indicatorsList = indicators.querySelectorAll('.indicator');
+
+                    cards.forEach((card, index) => {
+                        if (index === currentIndex) {
+                            card.classList.add('active');
+                        } else {
+                            card.classList.remove('active');
+                        }
+                    });
+
+                    indicatorsList.forEach((indicator, index) => {
+                        if (index === currentIndex) {
+                            indicator.classList.add('active');
+                        } else {
+                            indicator.classList.remove('active');
+                        }
+                    });
+
+                    // Atualizar posição do wrapper
+                    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                // Navegar para um card específico
+                function goToCard(galleryId, index) {
+                    currentIndex = index;
+                    updateActiveCard();
+                }
+
+                // Navegar para o próximo card
+                function nextCard() {
+                    currentIndex = (currentIndex + 1) % data.length;
+                    updateActiveCard();
+                }
+
+                // Navegar para o card anterior
+                function prevCard() {
+                    currentIndex = (currentIndex - 1 + data.length) % data.length;
+                    updateActiveCard();
+                }
+
+                // Adicionar event listeners aos botões
+                nextBtn.addEventListener('click', nextCard);
+                prevBtn.addEventListener('click', prevCard);
+
+                // Navegação por teclado
+                document.addEventListener('keydown', (e) => {
+                    const activeContainer = document.activeElement.closest('.cards-container');
+                    if (activeContainer && activeContainer.id === `${galleryId}Container`) {
+                        if (e.key === 'ArrowRight') nextCard();
+                        if (e.key === 'ArrowLeft') prevCard();
+                    }
+                });
+
+                // Auto-play (opcional)
+                let autoPlayInterval = setInterval(nextCard, 5000);
+
+                // Pausar auto-play ao interagir
+                wrapper.addEventListener('mouseenter', () => {
+                    clearInterval(autoPlayInterval);
+                });
+
+                wrapper.addEventListener('mouseleave', () => {
+                    autoPlayInterval = setInterval(nextCard, 5000);
+                });
+
+                // Inicializar
+                updateActiveCard();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/paises.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../assets/onu-icon.png" type="image/png">
+    <title>IRÃ</title>
+</head>
+
+<body>
+    <header>
+        <div class="home-hiperlink">
+            <a href="../index.html#links">
+                <div class="back"></div>
+                <p>Voltar à página inicial</p>
+            </a>
+        </div>
+    </header>
+
+    <div class="paisContainer">
+        <div class="bannerContainer">
+            <div class="full-screen"></div>
+            <img src="assets/ira.jpg" alt="Bandeira do país">
+            <h1 class="paisTitulo">IRÃ</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="conteudoContainer">
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">SOBRE O PAÍS</h2>
+                <div class="cards-container" id="sobrePaisContainer">
+                    <button class="nav-btn prev-btn" id="sobrePaisPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="sobrePaisNext">&#10095;</button>
+                    <div class="cards-wrapper" id="sobrePaisWrapper"></div>
+                    <div class="card-indicators" id="sobrePaisIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">DISCURSO</h2>
+                <div class="cards-container" id="discursoContainer">
+                    <button class="nav-btn prev-btn" id="discursoPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="discursoNext">&#10095;</button>
+                    <div class="cards-wrapper" id="discursoWrapper"></div>
+                    <div class="card-indicators" id="discursoIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">COMIDA TÍPICA</h2>
+                <div class="cards-container" id="comidaContainer">
+                    <button class="nav-btn prev-btn" id="comidaPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="comidaNext">&#10095;</button>
+                    <div class="cards-wrapper" id="comidaWrapper"></div>
+                    <div class="card-indicators" id="comidaIndicators"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stars" id="stars"></div>
+    <script src="../scripts/stars.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sobrePaisData = [
+                {
+                    title: "Liderança Política",
+                    content: "O atual presidente do Irã é Masoud Pezeshkian, que assumiu o cargo em julho de 2024, após a morte do então presidente Ebrahim Raisi. Pezeshkian é um político reformista e ex-ministro da Saúde, conhecido por suas posições em favor de maior liberdade social e política."
+                },
+                {
+                    title: "Desafios Econômicos",
+                    content: "Em 2025, a economia iraniana enfrenta sérios desafios. O Fundo Monetário Internacional (FMI) projeta um crescimento do Produto Interno Bruto (PIB) próximo de zero, com uma inflação anual estimada em 43,3%."
+                },
+                {
+                    title: "Crise Fiscal",
+                    content: "Além disso, o país enfrenta uma crise fiscal, com um déficit orçamentário crescente e uma moeda nacional em declínio. A indústria iraniana está em retração, e há um aumento no descontentamento social."
+                },
+                {
+                    title: "Relações Internacionais",
+                    content: "O governo de Pezeshkian busca aliviar as sanções internacionais e reengajar-se em negociações nucleares para melhorar a situação econômica."
+                },
+                {
+                    title: "Parcerias Estratégicas",
+                    content: "No campo internacional, o Irã tem buscado fortalecer suas relações com aliados estratégicos, como Rússia e China. Em janeiro de 2025, Pezeshkian assinou um tratado de parceria estratégica com a Rússia, abrangendo comércio, cooperação militar e científica."
+                }
+            ];
+
+            const comidaData = [
+                {
+                    title: "Descrição",
+                    content: "O naan-e barbari é um pão tradicional iraniano, de formato oval e textura macia por dentro e crocante por fora. Muito popular no café da manhã no Irã, é servido com acompanhamentos como queijo feta, mel, geleias ou nozes.",
+                    type: "text"
+                },
+                {
+                    title: "Ingredientes",
+                    content: "",
+                    type: "list",
+                    items: [
+                        "Farinha de trigo",
+                        "Fermento",
+                        "Água",
+                        "Sal",
+                        "Roomal (mistura de água com farinha)",
+                        "Sementes de gergelim ou nigela (opcional)"
+                    ]
+                },
+                {
+                    title: "Observação",
+                    content: "O diferencial está no uso do roomal, um molho que garante brilho e crocância, e nas marcas na massa feitas com os dedos ou com um pente especial. Assado em forno quente — tradicionalmente de barro — o pão é símbolo da mesa iraniana, sendo comprado fresco todas as manhãs em padarias locais chamadas nanvai.",
+                    type: "text"
+                },
+                {
+                    title: "Imagem",
+                    content: "",
+                    type: "image",
+                    src: "assets/comidas/ira.jpg"
+                }
+            ];
+
+            const discursoData = [
+                {
+                    title: "Arquivo PDF",
+                    content: "",
+                    type: "pdf",
+                    src: "Discursos/Discurso da Irã.pdf"
+                }
+            ];
+
+            initGallery("sobrePais", sobrePaisData);
+            initGallery("comida", comidaData);
+            initGallery("discurso", discursoData);
+
+            function initGallery(galleryId, data) {
+                const wrapper = document.getElementById(`${galleryId}Wrapper`);
+                const indicators = document.getElementById(`${galleryId}Indicators`);
+                const prevBtn = document.getElementById(`${galleryId}Prev`);
+                const nextBtn = document.getElementById(`${galleryId}Next`);
+                let currentIndex = 0;
+
+                data.forEach((item, index) => {
+                    const cardElement = document.createElement('div');
+                    cardElement.className = `card ${galleryId === 'comida' ? 'card-comida' : ''} ${galleryId === 'discurso' ? 'card-discurso' : ''}`;
+                    
+                    let cardContent = `<h3>${item.title}</h3>`;
+                    
+                    if (item.type === "list") {
+                        cardContent += `<ul>`;
+                        item.items.forEach(listItem => cardContent += `<li>${listItem}</li>`);
+                        cardContent += `</ul>`;
+                    } else if (item.type === "image") {
+                        cardContent += `<img src="${item.src}" alt="${item.title}">`;
+                    } else if (item.type === "pdf") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<a href="${item.src}" download class="botao-download"><img class="icon" src="assets/icones/pdf.png" alt="Download do pdf"></a>`;
+                    } else if (item.type === "video") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<iframe src="${item.src}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    } else {
+                        cardContent += `<p>${item.content}</p>`;
+                    }
+                    
+                    cardElement.innerHTML = cardContent;
+                    wrapper.appendChild(cardElement);
+
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    if (index === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToCard(galleryId, index));
+                    indicators.appendChild(indicator);
+                });
+
+                function updateActiveCard() {
+                    const cards = wrapper.querySelectorAll('.card');
+                    const indicatorsList = indicators.querySelectorAll('.indicator');
+                    
+                    cards.forEach((card, index) => {
+                        card.classList.toggle('active', index === currentIndex);
+                    });
+                    
+                    indicatorsList.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === currentIndex);
+                    });
+                    
+                    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                function goToCard(galleryId, index) {
+                    currentIndex = index;
+                    updateActiveCard();
+                }
+
+                function nextCard() {
+                    currentIndex = (currentIndex + 1) % data.length;
+                    updateActiveCard();
+                }
+
+                function prevCard() {
+                    currentIndex = (currentIndex - 1 + data.length) % data.length;
+                    updateActiveCard();
+                }
+
+                nextBtn.addEventListener('click', nextCard);
+                prevBtn.addEventListener('click', prevCard);
+
+                document.addEventListener('keydown', (e) => {
+                    const activeContainer = document.activeElement.closest('.cards-container');
+                    if (activeContainer && activeContainer.id === `${galleryId}Container`) {
+                        if (e.key === 'ArrowRight') nextCard();
+                        if (e.key === 'ArrowLeft') prevCard();
+                    }
+                });
+
+                let autoPlayInterval = setInterval(nextCard, 5000);
+                wrapper.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                wrapper.addEventListener('mouseleave', () => autoPlayInterval = setInterval(nextCard, 5000));
+
+                updateActiveCard();
+            }
+        });
+    </script>
+</body>
+
+</html>

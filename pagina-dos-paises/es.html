@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/paises.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../assets/onu-icon.png" type="image/png">
+    <title>ESPANHA</title>
+</head>
+<body>
+    <header>
+        <div class="home-hiperlink">
+            <a href="../index.html#links">
+                <div class="back"></div>
+                <p>Voltar à página inicial</p>
+            </a>
+        </div>
+    </header>
+
+    <div class="paisContainer">
+        <div class="bannerContainer">
+            <div class="full-screen"></div>
+            <img src="assets/espanha.jpg" alt="Bandeira do país">
+            <h1 class="paisTitulo">ESPANHA</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="conteudoContainer">
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">SOBRE O PAÍS</h2>
+                <div class="cards-container" id="sobrePaisContainer">
+                    <button class="nav-btn prev-btn" id="sobrePaisPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="sobrePaisNext">&#10095;</button>
+                    <div class="cards-wrapper" id="sobrePaisWrapper"></div>
+                    <div class="card-indicators" id="sobrePaisIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">DISCURSO</h2>
+                <div class="cards-container" id="discursoContainer">
+                    <button class="nav-btn prev-btn" id="discursoPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="discursoNext">&#10095;</button>
+                    <div class="cards-wrapper" id="discursoWrapper"></div>
+                    <div class="card-indicators" id="discursoIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">COMIDA TÍPICA</h2>
+                <div class="cards-container" id="comidaContainer">
+                    <button class="nav-btn prev-btn" id="comidaPrev">&#10094;</button>
+                    <button class="nav-btn next-btn" id="comidaNext">&#10095;</button>
+                    <div class="cards-wrapper" id="comidaWrapper"></div>
+                    <div class="card-indicators" id="comidaIndicators"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paisTopicosContainer">
+                <h2 class="paisTopicos">ENTREVISTA</h2>
+                <div style="text-align: center;">
+                    <video width="640" height="360" controls>
+                        <source src="entrevistas/espanha.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stars" id="stars"></div>
+    <script src="../scripts/stars.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sobrePaisData = [
+                {
+                    title: "Liderança Política",
+                    content: "O atual presidente do Governo da Espanha é Pedro Sánchez, líder do Partido Socialista Operário Espanhol (PSOE). Ele assumiu o cargo em junho de 2018 e foi reeleito em novembro de 2023, após as eleições gerais. Sánchez tem implementado uma agenda de reformas econômicas e sociais, incluindo investimentos em infraestrutura e políticas de apoio ao emprego."
+                },
+                {
+                    title: "Desempenho Econômico",
+                    content: "Em 2025, a economia espanhola apresenta um desempenho robusto. O Produto Interno Bruto (PIB) cresceu 3,2% em 2024, mais do que o dobro da média da zona do euro. Para 2025, o governo espanhol revisou sua previsão de crescimento do PIB para 2,6%, destacando-se como uma das economias com maior crescimento na região."
+                },
+                {
+                    title: "Fatores de Crescimento",
+                    content: "Esse desempenho é impulsionado por fatores como o aumento do turismo, investimentos em energias renováveis e a recuperação do consumo privado."
+                },
+                {
+                    title: "Desafios Econômicos",
+                    content: "No entanto, desafios permanecem. O Banco de Espanha alerta para possíveis impactos de tensões geopolíticas e políticas comerciais internacionais no crescimento econômico. Além disso, questões como o custo da habitação e a necessidade de investimentos em inovação e produtividade são pontos críticos."
+                },
+                {
+                    title: "Relações Internacionais",
+                    content: "Internacionalmente, a Espanha tem buscado fortalecer suas relações comerciais e políticas, participando ativamente de iniciativas multilaterais e reforçando sua posição na União Europeia."
+                }
+            ];
+
+            const comidaData = [
+                {
+                    title: "Descrição",
+                    content: "As Patatas Bravas são um dos pratos mais emblemáticos da culinária espanhola, especialmente populares nos bares e restaurantes como tapas. Consistem em cubos de batata frita, crocantes por fora e macias por dentro, servidas com um molho picante à base de tomate.",
+                    type: "text"
+                },
+                {
+                    title: "Ingredientes",
+                    content: "",
+                    type: "list",
+                    items: [
+                        "Batatas",
+                        "Azeite",
+                        "Sal",
+                        "Alho",
+                        "Tomate",
+                        "Pimentão",
+                        "Pimenta caiena (ou pimenta vermelha)",
+                        "Vinagre"
+                    ]
+                },
+                {
+                    title: "Observação",
+                    content: "O segredo das Patatas Bravas está no molho, que é o verdadeiro destaque do prato. A mistura de tomate com alho, pimentão e especiarias confere um sabor intenso e picante, que combina perfeitamente com a crocância das batatas. A escolha das batatas também é importante: elas devem ser cortadas em cubos médios e fritas em azeite bem quente para obter a textura ideal.",
+                    type: "text"
+                },
+                {
+                    title: "Imagem",
+                    content: "",
+                    type: "image",
+                    src: "assets/comidas/patatas.jpg"
+                }
+            ];
+
+            const discursoData = [
+                {
+                    title: "Arquivo PDF",
+                    content: "",
+                    type: "pdf",
+                    src: "Discursos/Discurso da Espanha.pdf"
+                }
+            ];
+
+            initGallery("sobrePais", sobrePaisData);
+            initGallery("comida", comidaData);
+            initGallery("discurso", discursoData);
+
+            function initGallery(galleryId, data) {
+                const wrapper = document.getElementById(`${galleryId}Wrapper`);
+                const indicators = document.getElementById(`${galleryId}Indicators`);
+                const prevBtn = document.getElementById(`${galleryId}Prev`);
+                const nextBtn = document.getElementById(`${galleryId}Next`);
+                let currentIndex = 0;
+
+                data.forEach((item, index) => {
+                    const cardElement = document.createElement('div');
+                    cardElement.className = `card ${galleryId === 'comida' ? 'card-comida' : ''} ${galleryId === 'discurso' ? 'card-discurso' : ''}`;
+                    
+                    let cardContent = `<h3>${item.title}</h3>`;
+                    
+                    if (item.type === "list") {
+                        cardContent += `<ul>`;
+                        item.items.forEach(listItem => cardContent += `<li>${listItem}</li>`);
+                        cardContent += `</ul>`;
+                    } else if (item.type === "image") {
+                        cardContent += `<img src="${item.src}" alt="${item.title}">`;
+                    } else if (item.type === "pdf") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<a href="${item.src}" download class="botao-download"><img class="icon" src="assets/icones/pdf.png" alt="Download do pdf"></a>`;
+                    } else if (item.type === "video") {
+                        cardContent += `<p>${item.content}</p>`;
+                        cardContent += `<iframe src="${item.src}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    } else {
+                        cardContent += `<p>${item.content}</p>`;
+                    }
+                    
+                    cardElement.innerHTML = cardContent;
+                    wrapper.appendChild(cardElement);
+
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    if (index === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => goToCard(galleryId, index));
+                    indicators.appendChild(indicator);
+                });
+
+                function updateActiveCard() {
+                    const cards = wrapper.querySelectorAll('.card');
+                    const indicatorsList = indicators.querySelectorAll('.indicator');
+                    
+                    cards.forEach((card, index) => {
+                        card.classList.toggle('active', index === currentIndex);
+                    });
+                    
+                    indicatorsList.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === currentIndex);
+                    });
+                    
+                    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                function goToCard(galleryId, index) {
+                    currentIndex = index;
+                    updateActiveCard();
+                }
+
+                function nextCard() {
+                    currentIndex = (currentIndex + 1) % data.length;
+                    updateActiveCard();
+                }
+
+                function prevCard() {
+                    currentIndex = (currentIndex - 1 + data.length) % data.length;
+                    updateActiveCard();
+                }
+
+                nextBtn.addEventListener('click', nextCard);
+                prevBtn.addEventListener('click', prevCard);
+
+                document.addEventListener('keydown', (e) => {
+                    const activeContainer = document.activeElement.closest('.cards-container');
+                    if (activeContainer && activeContainer.id === `${galleryId}Container`) {
+                        if (e.key === 'ArrowRight') nextCard();
+                        if (e.key === 'ArrowLeft') prevCard();
+                    }
+                });
+
+                let autoPlayInterval = setInterval(nextCard, 5000);
+                wrapper.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                wrapper.addEventListener('mouseleave', () => autoPlayInterval = setInterval(nextCard, 5000));
+
+                updateActiveCard();
+            }
+        });
+    </script>
+</body>
+</html>
